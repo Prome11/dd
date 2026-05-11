@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the service menu first
+    url: https://github.com/Prome11/dd/blob/main/docs/service-menu.md
+    about: Check package scope, reference pricing, and revision rules before opening an inquiry.
