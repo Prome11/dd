@@ -1,0 +1,59 @@
+name: Service Inquiry
+description: Request a quote for PPT, content, or home-living live ops support.
+title: "[Service Inquiry] "
+labels:
+  - service-inquiry
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest. Please share only non-sensitive information here. Do not upload private company documents, IDs, passwords, payment data, or unpublished business secrets to a public issue.
+  - type: dropdown
+    id: service_type
+    attributes:
+      label: Service type
+      options:
+        - PPT Fast Polish
+        - Xiaohongshu Content Starter
+        - Home Live Ops Kit
+        - Custom Research + Delivery
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What do you want to achieve?
+      placeholder: "Example: I need a 15-page work report PPT polished before Friday."
+    validations:
+      required: true
+  - type: textarea
+    id: current_material
+    attributes:
+      label: Current material status
+      description: Describe what you already have without posting sensitive content.
+      placeholder: "Example: rough outline, old PPT, product notes, screenshots, data table."
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      placeholder: "Example: 2026-05-20 18:00"
+    validations:
+      required: true
+  - type: input
+    id: expected_size
+    attributes:
+      label: Expected size
+      placeholder: "Example: 15 slides, 10 posts, 30-minute livestream script."
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any style, audience, or constraints?
+      placeholder: "Example: clean business style, for a manager audience, no exaggerated claims."
+    validations:
+      required: false
