@@ -1,8 +1,6 @@
 name: Service Inquiry
 description: Request a quote for PPT, content, or home-living live ops support.
 title: "[Service Inquiry] "
-labels:
-  - service-inquiry
 body:
   - type: markdown
     attributes:
