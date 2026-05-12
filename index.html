@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Service Growth Kit | 中文 AI 服务交付</title>
+    <meta
+      name="description"
+      content="PPT 优化、小红书服务帖、家居直播话术和业务资料整理服务。清楚报价、固定交付、公开入口。"
+    >
+    <meta property="og:title" content="AI Service Growth Kit">
+    <meta property="og:description" content="把零散材料变成能报价、能交付、能复用的 AI 辅助服务资产。">
+    <meta property="og:type" content="website">
+    <style>
+      :root {
+        --paper: #fbfaf6;
+        --ink: #202124;
+        --muted: #5c625f;
+        --line: #d8d2c4;
+        --green: #1f6f50;
+        --red: #b33d2e;
+        --gold: #a97817;
+        --blue: #315f8f;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 14px min(6vw, 64px);
+        border-bottom: 1px solid rgba(32, 33, 36, 0.12);
+        background: rgba(251, 250, 246, 0.94);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        font-weight: 800;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .nav a {
+        text-decoration: none;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 10px 16px;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--white);
+        font-weight: 760;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .hero {
+        padding: 52px min(6vw, 64px) 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--red);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 860px;
+        font-size: clamp(40px, 6vw, 76px);
+        line-height: 1.03;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 720px;
+        margin: 22px 0 0;
+        color: #3d403f;
+        font-size: 19px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .proof-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        max-width: 760px;
+        margin-top: 30px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .proof-strip div {
+        min-height: 86px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .proof-strip strong {
+        display: block;
+        font-size: 21px;
+      }
+
+      .proof-strip span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .workflow-board {
+        border: 1px solid var(--line);
+        background: var(--white);
+        box-shadow: 10px 10px 0 rgba(31, 111, 80, 0.14);
+      }
+
+      .board-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        font-weight: 800;
+      }
+
+      .board-status {
+        color: var(--green);
+        font-size: 13px;
+      }
+
+      .board-body {
+        display: grid;
+        gap: 12px;
+        padding: 16px;
+      }
+
+      .ticket {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        gap: 12px;
+        padding: 12px;
+        border: 1px solid var(--line);
+      }
+
+      .ticket b {
+        color: var(--blue);
+      }
+
+      .ticket p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 38px min(6vw, 64px) 64px;
+      }
+
+      section {
+        padding: 32px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      section:last-child {
+        border-bottom: 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 22px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(26px, 3vw, 38px);
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      .section-head p {
+        max-width: 520px;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .service {
+        min-height: 250px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .service h3 {
+        margin: 0 0 10px;
+        font-size: 21px;
+        line-height: 1.2;
+      }
+
+      .service p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .price {
+        display: inline-block;
+        margin-top: 18px;
+        color: var(--red);
+        font-weight: 850;
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .step {
+        min-height: 160px;
+        padding: 18px;
+        background: var(--white);
+      }
+
+      .step span {
+        color: var(--gold);
+        font-weight: 900;
+      }
+
+      .resource-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .resource-list a {
+        display: block;
+        padding: 16px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+        font-weight: 760;
+        text-decoration: none;
+      }
+
+      .note {
+        padding: 20px;
+        border-left: 6px solid var(--green);
+        background: #eef5ef;
+      }
+
+      .final-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 28px;
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      .final-cta p {
+        margin: 8px 0 0;
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .final-cta .button {
+        border-color: var(--white);
+        background: var(--white);
+        color: var(--ink);
+        white-space: nowrap;
+      }
+
+      footer {
+        padding: 26px min(6vw, 64px);
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      @media (max-width: 920px) {
+        .service-grid,
+        .process {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .workflow-board {
+          box-shadow: 6px 6px 0 rgba(31, 111, 80, 0.14);
+        }
+      }
+
+      @media (max-width: 680px) {
+        .topbar,
+        .nav,
+        .hero-actions,
+        .section-head,
+        .final-cta {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .nav {
+          gap: 10px;
+        }
+
+        .hero {
+          padding-top: 34px;
+        }
+
+        .proof-strip,
+        .service-grid,
+        .process,
+        .resource-list {
+          grid-template-columns: 1fr;
+        }
+
+        .ticket {
+          grid-template-columns: 1fr;
+        }
+
+        .button,
+        .final-cta .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">AI Service Growth Kit</div>
+      <nav class="nav" aria-label="主要导航">
+        <a href="#services">服务</a>
+        <a href="#process">流程</a>
+        <a href="#resources">资源</a>
+        <a class="button" href="https://github.com/Prome11/dd/issues/new?template=service-inquiry.yml">发起咨询</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">公开服务页 · 固定交付 · 可先小单验证</p>
+        <h1>把零散材料变成可以成交的 AI 服务交付</h1>
+        <p class="lead">
+          提供 PPT 优化、小红书服务内容、家居直播话术和业务资料整理。先用非敏感摘要确认范围，再报价、交付、复用模板。
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/Prome11/dd/issues/new?template=service-inquiry.yml">现在提交需求</a>
+          <a class="button secondary" href="https://github.com/Prome11/dd/blob/main/docs/service-menu.md">查看服务菜单</a>
+        </div>
+        <div class="proof-strip" aria-label="服务特点">
+          <div><strong>4 类</strong><span>可报价服务包</span></div>
+          <div><strong>4 份</strong><span>公开免费模板</span></div>
+          <div><strong>1 条</strong><span>安全咨询入口</span></div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section aria-label="交付预览">
+        <div class="section-head">
+          <h2>交付会长什么样</h2>
+          <p>页面不只介绍能力，也把买家能拿到的东西说清楚，降低第一次咨询的判断成本。</p>
+        </div>
+        <aside class="workflow-board">
+          <div class="board-head">
+            <span>Delivery Board</span>
+            <span class="board-status">Ready for inquiry</span>
+          </div>
+          <div class="board-body">
+            <div class="ticket">
+              <b>PPT</b>
+              <div>粗糙材料 → 结构重排、逐页标题、视觉检查清单<p>适合汇报、答辩、项目介绍、路演材料。</p></div>
+            </div>
+            <div class="ticket">
+              <b>XHS</b>
+              <div>服务定位 → 选题、成稿、CTA、7 天发布节奏<p>不做假流量承诺，重点是能让人问价。</p></div>
+            </div>
+            <div class="ticket">
+              <b>Live</b>
+              <div>产品资料 → 卖点地图、直播脚本、评论回复库<p>适合家居、收纳、软装、灯具、家具类产品。</p></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="services">
+        <div class="section-head">
+          <h2>可以买什么</h2>
+          <p>所有价格都是公开参考区间。最终报价由材料复杂度、截止时间、页数、研究深度和修改次数决定。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <h3>PPT Fast Polish</h3>
+            <p>帮已有 PPT、Word、截图或粗纲变成更清楚的汇报结构和页面文案。</p>
+            <span class="price">RMB 199-699</span>
+          </article>
+          <article class="service">
+            <h3>Xiaohongshu Content Starter</h3>
+            <p>把服务能力写成定位、选题、服务帖和自然咨询入口，适合刚开始获客。</p>
+            <span class="price">RMB 299-899</span>
+          </article>
+          <article class="service">
+            <h3>Home Live Ops Kit</h3>
+            <p>把家居产品卖点、使用场景、常见反对意见整理成可播、可复盘的话术。</p>
+            <span class="price">RMB 699-2999</span>
+          </article>
+          <article class="service">
+            <h3>Custom Research + Delivery</h3>
+            <p>适合需求还不清楚的项目，先诊断问题，再输出行动方案和模板资产。</p>
+            <span class="price">按范围报价</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="section-head">
+          <h2>怎么开始</h2>
+          <p>公开页面只接收非敏感摘要。涉及公司文件、客户数据、付款信息的内容，先不要放到 GitHub。</p>
+        </div>
+        <div class="process">
+          <div class="step"><span>01</span><h3>提交摘要</h3><p>说明目标、受众、截止时间、已有材料状态。</p></div>
+          <div class="step"><span>02</span><h3>确认范围</h3><p>判断适合固定服务包，还是需要先做小诊断。</p></div>
+          <div class="step"><span>03</span><h3>锁定交付</h3><p>明确输出物、时间、修改边界和安全材料渠道。</p></div>
+          <div class="step"><span>04</span><h3>交付复用</h3><p>给结果，也给模板、检查表或下一步动作。</p></div>
+        </div>
+      </section>
+
+      <section id="resources">
+        <div class="section-head">
+          <h2>先拿免费模板</h2>
+          <p>这些模板可以直接帮助你整理需求，也能降低报价沟通成本。</p>
+        </div>
+        <div class="resource-list">
+          <a href="https://github.com/Prome11/dd/blob/main/docs/free-resources/ppt-client-brief-template.md">PPT Client Brief Template</a>
+          <a href="https://github.com/Prome11/dd/blob/main/docs/free-resources/xhs-service-post-calendar.md">Xiaohongshu Service Post Calendar</a>
+          <a href="https://github.com/Prome11/dd/blob/main/docs/free-resources/home-livestream-script-sop.md">Home Livestream Script SOP</a>
+          <a href="https://github.com/Prome11/dd/blob/main/docs/free-resources/delivery-quality-checklist.md">Delivery Quality Checklist</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="note">
+          <strong>公开边界：</strong>
+          这里不承诺保证涨粉、保证成交或保证收入；承诺的是把材料整理成更清楚、可交付、可复用的服务资产。所有公开案例必须匿名、去敏、可验证。
+        </div>
+      </section>
+
+      <section>
+        <div class="final-cta">
+          <div>
+            <h2>先从一个小范围开始</h2>
+            <p>提交非敏感摘要，先确认是否适合报价。范围越清楚，交付越快。</p>
+          </div>
+          <a class="button" href="https://github.com/Prome11/dd/issues/new?template=service-inquiry.yml">发起服务咨询</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Built for practical, ethical, AI-assisted service delivery. Repository: github.com/Prome11/dd
+    </footer>
+  </body>
+</html>
