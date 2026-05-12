@@ -2,6 +2,10 @@
 
 This menu keeps offers clear enough for a first inquiry. It is designed for small paid service orders that can be delivered quickly and improved through repeat work.
 
+Open a public inquiry here: https://github.com/Prome11/dd/issues/new?template=service-inquiry.yml
+
+Share only non-sensitive summaries in public issues. Private company files, customer data, payment details, unpublished business secrets, and IDs should stay out of GitHub.
+
 ## 1. PPT Fast Polish
 
 **For:** students, employees, founders, or operators who already have rough materials but need a clearer deck.
@@ -94,3 +98,13 @@ This menu keeps offers clear enough for a first inquiry. It is designed for smal
 Quote = base package + material complexity + deadline pressure + revision depth + research depth.
 
 For a first order, keep the scope small. A paid diagnostic or one-page rewrite is often better than a vague large project.
+
+## First-Order Recommendation
+
+If the buyer is not sure which package fits, quote a small diagnostic first:
+
+- PPT: rewrite one page or one outline section.
+- Xiaohongshu: produce one positioning memo plus three post titles.
+- Live ops: rewrite one product selling-point block and five comment replies.
+
+This lowers the buyer's risk and creates a clean path to a larger order.
